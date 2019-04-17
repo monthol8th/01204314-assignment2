@@ -4,27 +4,14 @@ google.charts.load('current', {'packages':['corechart','line']});
 // Set a callback to run when the Google Visualization API is loaded.
 google.charts.setOnLoadCallback(drawGDPLineChart);
 google.charts.setOnLoadCallback(drawChart2);
+google.charts.setOnLoadCallback(drawRevenueLineChart);
+google.charts.setOnLoadCallback(drawRevenueChart);
 
 // Chart 2
-var chart2_category = "GDP";
 var chart2_country = "cameroon";
 
-function set_chart2_category(category) {
-  chart2_category = category;
-  drawChart2();
-}
-
-function set_chart2_country(country) {
-  chart2_country = country;
-  drawChart2();
-}
-
 function drawChart2() {
-  if (chart2_category == "GDP") {
-    drawGDPChart(chart2_country);
-  } else {
-    drawRevenueChart(chart2_country);
-  }
+  drawGDPChart(chart2_country);
 }
 
 function drawRevenueChart(country) {
@@ -33,8 +20,8 @@ function drawRevenueChart(country) {
   dataset["cameroon"] = {};
   dataset["cameroon"]["data"] = new google.visualization.DataTable();
   dataset["cameroon"]["data"].addColumn('string', 'year');
-  dataset["cameroon"]["data"].addColumn('number', 'real');
-  dataset["cameroon"]["data"].addColumn('number', 'predicted');
+  dataset["cameroon"]["data"].addColumn('number', 'True Value');
+  dataset["cameroon"]["data"].addColumn('number', 'Predict Value');
   dataset["cameroon"]["data"].addRows([
     ['2005', 1676028, 1686366],
     ['2006', 1990021, 1978383],
@@ -61,8 +48,8 @@ function drawRevenueChart(country) {
   dataset["eygpt"] = {};
   dataset["eygpt"]["data"] = new google.visualization.DataTable();
   dataset["eygpt"]["data"].addColumn('string', 'year');
-  dataset["eygpt"]["data"].addColumn('number', 'real');
-  dataset["eygpt"]["data"].addColumn('number', 'predicted');
+  dataset["eygpt"]["data"].addColumn('number', 'True Value');
+  dataset["eygpt"]["data"].addColumn('number', 'Predict Value');
   dataset["eygpt"]["data"].addRows([
     ['2005', 110067, 109748],
     ['2006', 150616, 151015],
@@ -89,8 +76,8 @@ function drawRevenueChart(country) {
   dataset["kenya"] = {};
   dataset["kenya"]["data"] = new google.visualization.DataTable();
   dataset["kenya"]["data"].addColumn('string', 'year');
-  dataset["kenya"]["data"].addColumn('number', 'real');
-  dataset["kenya"]["data"].addColumn('number', 'predicted');
+  dataset["kenya"]["data"].addColumn('number', 'True Value');
+  dataset["kenya"]["data"].addColumn('number', 'Predict Value');
   dataset["kenya"]["data"].addRows([
     ['2005', 324873, 321017],
     ['2006', 348419, 356774],
@@ -117,8 +104,8 @@ function drawRevenueChart(country) {
   dataset["morocco"] = {};
   dataset["morocco"]["data"] = new google.visualization.DataTable();
   dataset["morocco"]["data"].addColumn('string', 'year');
-  dataset["morocco"]["data"].addColumn('number', 'real');
-  dataset["morocco"]["data"].addColumn('number', 'predicted');
+  dataset["morocco"]["data"].addColumn('number', 'True Value');
+  dataset["morocco"]["data"].addColumn('number', 'Predict Value');
   dataset["morocco"]["data"].addRows([
     ['2005', 153332, 153685],
     ['2006', 177404, 178069],
@@ -145,8 +132,8 @@ function drawRevenueChart(country) {
   dataset["south_africa"] = {};
   dataset["south_africa"]["data"] = new google.visualization.DataTable();
   dataset["south_africa"]["data"].addColumn('string', 'year');
-  dataset["south_africa"]["data"].addColumn('number', 'real');
-  dataset["south_africa"]["data"].addColumn('number', 'predicted');
+  dataset["south_africa"]["data"].addColumn('number', 'True Value');
+  dataset["south_africa"]["data"].addColumn('number', 'Predict Value');
   dataset["south_africa"]["data"].addRows([
     ['2005', 427721, 424002],
     ['2006', 483147, 487089],
@@ -170,8 +157,11 @@ function drawRevenueChart(country) {
     }
   };
 
+  if (!country) {
+    country = "cameroon";
+  }
 
-  var chart = new google.visualization.LineChart(document.getElementById('chart-2-div'));
+  var chart = new google.visualization.LineChart(document.getElementById('chart-4-div'));
   chart.draw(dataset[country]["data"], dataset[country]["options"]);
 }
 
@@ -181,8 +171,8 @@ function drawGDPChart(country) {
   dataset["cameroon"] = {};
   dataset["cameroon"]["data"] = new google.visualization.DataTable();
   dataset["cameroon"]["data"].addColumn('string', 'year');
-  dataset["cameroon"]["data"].addColumn('number', 'real');
-  dataset["cameroon"]["data"].addColumn('number', 'predict');
+  dataset["cameroon"]["data"].addColumn('number', 'True Value');
+  dataset["cameroon"]["data"].addColumn('number', 'Predict Value');
   dataset["cameroon"]["data"].addRows([
     ['1995', 9040000000, 9191298206],
     ['1996', 10300000000, 10534427868],
@@ -220,8 +210,8 @@ function drawGDPChart(country) {
   dataset["eygpt"] = {};
   dataset["eygpt"]["data"] = new google.visualization.DataTable();
   dataset["eygpt"]["data"].addColumn('string', 'year');
-  dataset["eygpt"]["data"].addColumn('number', 'real');
-  dataset["eygpt"]["data"].addColumn('number', 'predict');
+  dataset["eygpt"]["data"].addColumn('number', 'True Value');
+  dataset["eygpt"]["data"].addColumn('number', 'Predict Value');
   dataset["eygpt"]["data"].addRows([
     ['1995', 60163453271, 60163453271],
     ['1996', 67632270941, 67632270941],
@@ -259,8 +249,8 @@ function drawGDPChart(country) {
   dataset["kenya"] = {};
   dataset["kenya"]["data"] = new google.visualization.DataTable();
   dataset["kenya"]["data"].addColumn('string', 'year');
-  dataset["kenya"]["data"].addColumn('number', 'real');
-  dataset["kenya"]["data"].addColumn('number', 'predict');
+  dataset["kenya"]["data"].addColumn('number', 'True Value');
+  dataset["kenya"]["data"].addColumn('number', 'Predict Value');
   dataset["kenya"]["data"].addRows([
     ['1995', 11800000000, 12774698452],
     ['1996', 11900000000, 10482233294],
@@ -298,8 +288,8 @@ function drawGDPChart(country) {
   dataset["morocco"] = {};
   dataset["morocco"]["data"] = new google.visualization.DataTable();
   dataset["morocco"]["data"].addColumn('string', 'year');
-  dataset["morocco"]["data"].addColumn('number', 'real');
-  dataset["morocco"]["data"].addColumn('number', 'predict');
+  dataset["morocco"]["data"].addColumn('number', 'True Value');
+  dataset["morocco"]["data"].addColumn('number', 'Predict Value');
   dataset["morocco"]["data"].addRows([
     ['1995', 32985271777, 33101001242],
     ['1996', 36638853755, 35760256149],
@@ -337,8 +327,8 @@ function drawGDPChart(country) {
   dataset["south_africa"] = {};
   dataset["south_africa"]["data"] = new google.visualization.DataTable();
   dataset["south_africa"]["data"].addColumn('string', 'year');
-  dataset["south_africa"]["data"].addColumn('number', 'real');
-  dataset["south_africa"]["data"].addColumn('number', 'predict');
+  dataset["south_africa"]["data"].addColumn('number', 'True Value');
+  dataset["south_africa"]["data"].addColumn('number', 'Predict Value');
   dataset["south_africa"]["data"].addRows([
     ['1995', 155000000000, 161189430502],
     ['1996', 148000000000, 151428337249],
@@ -425,7 +415,7 @@ function drawRevenueLineChart() {
     height: 500
   };
 
-  var chart = new google.charts.Line(document.getElementById('chart-1-div'));
+  var chart = new google.charts.Line(document.getElementById('chart-3-div'));
   chart.draw(revenue_data, google.charts.Line.convertOptions(revenue_data_options));
 }
 
