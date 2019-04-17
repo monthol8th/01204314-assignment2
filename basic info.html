@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Blog Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/blog/">
+
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- smooth scroll -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+    
+            // Store hash
+            var hash = this.hash;
+    
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+            scrollTop: $(hash).offset().top
+            }, 800, function(){
+    
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+            });
+        } // End if
+        });
+    });
+    </script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#">AFRICA</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+      </div>
+    </div>
+  </header>
+  
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-4 text-muted" href="#info">About Africa</a>
+      <a class="p-4 text-muted" href="#GDP">Gross domestic product (GDP)</a>
+      <a class="p-4 text-muted" href="#revenue">Govenment revenue</a>
+      <a class="p-4 text-muted" href="#tax">Tax</a>
+    </nav>
+  </div>
+
+  <div class="jumbotron p-8 p-md-5 text-white rounded bg-dark" style="background-image: url(bg1.png) ">
+    <div class="col-md-7 px-0">
+      <h1 class="display-4 font-italic">Knowing Africa</h1>
+      <p class="lead my-3">In term of population and land mass, Africa is the second largest continent in the world, trailing behind only asia. But, amazingly a majority
+          of the billion people living on the continent survive every day with little to no access to electricity. In the midst of economic, social, and geopolitical turmoil...
+      </p>
+    </div>
+  </div>
+
+  <div id="info">
+    <div class="row mb-2">
+        <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Southern Africa</strong>
+            <h3 class="mb-0">South Africa</h3>
+            <p class="mb-auto">South Africa is the 34th largest export economy in the world and the 47th most complex economy according to the Economic Complexity Index
+                    The top exports of South Africa are Gold, Diamonds, Platinum, Cars and Coal Briquettes and top imports are Crude Petroleum, Refined Petroleum, Cars, Gold and Broadcasting Equipment.
+            </p>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success">Northern Africa</strong>
+                <h3 class="mb-0">Morocco</h3>
+                <p class="mb-auto">Morocco is the 67th largest export economy in the world and the 99th most complex economy.
+                        The top exports of Morocco are Cars, Mixed Mineral or Chemical Fertilizers, Insulated Wire, Non-Knit Women's Suits and Phosphoric Acid and top imports are Refined Petroleum, Cars, Petroleum Gas, Vehicle Parts and Wheat)</p>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success">Northern Africa</strong>
+                <h3 class="mb-0">Egypt</h3>
+                <p class="mb-auto">Egypt is the 62nd largest export economy in the world and the 72nd most complex economy.The top exports of Egypt are Crude Petroleum, Gold, Nitrogenous Fertilizers, Refined Petroleum and Insulated Wire and top imports are Wheat, Petroleum Gas, Refined Petroleum , Semi-Finished Iron and Crude Petroleum</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success">Eastern Africa</strong>
+                <h3 class="mb-0">Kenya</h3>
+                <p class="mb-auto">enya is the 101st largest export economy in the world and the 89th most complex economy.
+                        The top exports of Kenya are Tea, Cut Flowers, Refined Petroleum, Coffee and Legumes and top imports are Refined Petroleum, Palm Oil, Cars, Packaged Medicaments and Raw Sugar.  </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">Central Africa</strong>
+                        <h3 class="mb-0">Cameroon</h3>
+                        <p class="mb-auto">Cameroon is the 111th largest export economy in the world and the 106th most complex economy.
+                                The top exports of Cameroon are Crude Petroleum, Sawn Wood, Cocoa Beans, Bananas and Rough Wood and top imports are Refined Petroleum, Special Purpose Ships, Rice, Crude Petroleum and Packaged Medicaments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container" id="GDP">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-12 mb-4 font-italic border-bottom">
+        Gross domestic product (GDP)
+      </h3>
+      <p>Use GDP data of 23 year (1995 - 2017) from each country to build a model to predict GDP
+          by using 18 inputs (e.g. agriculture, chemical & allied industries, mineral, machinery, fuel and so on)
+        </p>
+        <p>Compare real GDP from 5 countries (1955-2017)</p>
+        <p>Compare real GDP from each country with predicted GDP (1955-2017)</p>
+           
+    </div>
+    <div class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic">GDP meaning</h4>
+        <p class="mb-0">Gross domestic product is the total value of everything produced in the country. It doesn't matter if it's produced by are citizens or foreigners. If they are located within the country's boundaries, their production is included in GDP.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main role="main" class="container" id="revenue">
+        <div class="row">
+          <div class="col-md-8 blog-main">
+            <h3 class="pb-12 mb-4 font-italic border-bottom">
+              Government Revenue 
+            </h3>
+            <p>
+                    Use government revenue data of 23 year (1995 - 2017) from each country to build a model to predict government revenue
+            </p>
+          </div>
+        </div>
+      </main>
+<div id="tax"></div>
+
+</body>
+</html>
