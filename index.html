@@ -229,6 +229,40 @@
       </div>
     </div>
 
+    <div class="container">
+      <div class="row border rounded">
+        <div class="col-md-8 blog-main">
+          <h3 class="mb-0">
+            Import By Country
+          </h3>
+          <p>
+            click at country's name to change country or click at section box to
+            see it's subsection.
+          </p>
+        </div>
+        <div class="col-md-12 blog-main">
+          <div id="treemap_import" style="height: 600px;width:100%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row border rounded">
+        <div class="col-md-8 blog-main">
+          <h3 class="mb-0">
+            Export By Country
+          </h3>
+          <p>
+            click at country's name to change country or click at section box to
+            see it's subsection.
+          </p>
+        </div>
+        <div class="col-md-12 blog-main">
+          <div id="treemap_export" style="height: 600px;width:100%"></div>
+        </div>
+      </div>
+    </div>
+
     <main role="main" class="container" id="GDP">
       <div class="row">
         <div class="col-md-8 blog-main">
@@ -259,20 +293,82 @@
       </div>
     </main>
 
-    <main role="main" class="container" id="revenue">
-      <div class="row">
-        <div class="col-md-8 blog-main">
-          <h3 class="pb-12 mb-4 font-italic border-bottom">
-            Government Revenue
-          </h3>
-          <p>
-            Use government revenue data of 23 year (1995 - 2017) from each
-            country to build a model to predict government revenue
-          </p>
+    <div class="container">
+      <div class="row border rounded">
+        <div class="col-md-12 blog-main">
+          <div>
+            <h3>Gross Domestic Product Overtime</h3>
+            <!--
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-primary" onclick="drawGDPLineChart()">GDP</button>
+              <button type="button" class="btn btn-primary" onclick="drawRevenueLineChart()">Revenue</button>
+            </div>
+            -->
+            <!--
+            <select id="select-1" name='select-1' onchange="select_1_change()">
+                <option selected value="GDP">GDP</option>
+                <option value="Revenue">Revenue</option>
+            </select>
+            -->
+            <!--Chart for GDP/Revenue-->
+            <div id="chart-1-div"></div>
+          </div>
+          <div>
+            <h3>Predicted vs Actual</h3>
+            <div
+              class="btn-toolbar"
+              role="toolbar"
+              aria-label="Toolbar with button groups"
+            >
+              <!--
+              <div class="btn-group mr-2" role="group">
+                <button type="button" class="btn btn-primary" onclick="set_chart2_category('GDP')">GDP</button>
+                <button type="button" class="btn btn-primary" onclick="set_chart2_category('Revenue')">Revenue</button>
+              </div>
+              -->
+              <div class="btn-group mr-2" role="group">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawGDPChart('cameroon')"
+                >
+                  Cameroon
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawGDPChart('eygpt')"
+                >
+                  Eygpt
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawGDPChart('kenya')"
+                >
+                  Kenya
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawGDPChart('morocco')"
+                >
+                  Morocco
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawGDPChart('south_africa')"
+                >
+                  South Aftrica
+                </button>
+              </div>
+            </div>
+            <div id="chart-2-div"></div>
+          </div>
         </div>
       </div>
-    </main>
-    <div id="tax"></div>
+    </div>
 
     <div class="container">
       <div class="row border rounded">
@@ -317,6 +413,85 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+
+    <main role="main" class="container" id="revenue">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <h3 class="pb-12 mb-4 font-italic border-bottom">
+            Government Revenue
+          </h3>
+          <p>
+            Use government revenue data of 23 year (1995 - 2017) from each
+            country to build a model to predict government revenue
+          </p>
+        </div>
+      </div>
+    </main>
+    <div id="tax"></div>
+
+    <div class="container">
+      <div class="row border rounded">
+        <div class="col-md-12 blog-main">
+          <div>
+            <h3>Revenue Overtime</h3>
+            <div id="chart-3-div"></div>
+          </div>
+          <div>
+            <h3>Predicted vs Actual</h3>
+            <div
+              class="btn-toolbar"
+              role="toolbar"
+              aria-label="Toolbar with button groups"
+            >
+              <!--
+                <div class="btn-group mr-2" role="group">
+                  <button type="button" class="btn btn-primary" onclick="set_chart2_category('GDP')">GDP</button>
+                  <button type="button" class="btn btn-primary" onclick="set_chart2_category('Revenue')">Revenue</button>
+                </div>
+                -->
+              <div class="btn-group mr-2" role="group">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawRevenueChart('cameroon')"
+                >
+                  Cameroon
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawRevenueChart('eygpt')"
+                >
+                  Eygpt
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawRevenueChart('kenya')"
+                >
+                  Kenya
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawRevenueChart('morocco')"
+                >
+                  Morocco
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="drawRevenueChart('south_africa')"
+                >
+                  South Aftrica
+                </button>
+              </div>
+            </div>
+            <div id="chart-4-div"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -367,179 +542,6 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row border rounded">
-        <div class="col-md-8 blog-main">
-          <h3 class="mb-0">
-            Import By Country
-          </h3>
-          <p>
-            click at country's name to change country or click at section box to
-            see it's subsection.
-          </p>
-        </div>
-        <div class="col-md-12 blog-main">
-          <div id="treemap_import" style="height: 600px;width:100%"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row border rounded">
-        <div class="col-md-8 blog-main">
-          <h3 class="mb-0">
-            Export By Country
-          </h3>
-          <p>
-            click at country's name to change country or click at section box to
-            see it's subsection.
-          </p>
-        </div>
-        <div class="col-md-12 blog-main">
-          <div id="treemap_export" style="height: 600px;width:100%"></div>
-        </div>
-      </div>
-    </div>
-
-    <!--Bootstrap-->
-    <div class="container">
-      <div class="row border rounded">
-        <div class="col-md-8 blog-main">
-          <h1>Data Comparison</h1>
-        </div>
-        <div class="col-md-12 blog-main">
-          <div>
-            <h2>Gross Domestic Product</h2>
-            <!--
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary" onclick="drawGDPLineChart()">GDP</button>
-            <button type="button" class="btn btn-primary" onclick="drawRevenueLineChart()">Revenue</button>
-          </div>
-          -->
-            <!--
-          <select id="select-1" name='select-1' onchange="select_1_change()">
-              <option selected value="GDP">GDP</option>
-              <option value="Revenue">Revenue</option>
-          </select>
-          -->
-            <!--Chart for GDP/Revenue-->
-            <div id="chart-1-div"></div>
-          </div>
-          <div>
-            <h3>Predicted vs Actual</h3>
-            <div
-              class="btn-toolbar"
-              role="toolbar"
-              aria-label="Toolbar with button groups"
-            >
-              <!--
-            <div class="btn-group mr-2" role="group">
-              <button type="button" class="btn btn-primary" onclick="set_chart2_category('GDP')">GDP</button>
-              <button type="button" class="btn btn-primary" onclick="set_chart2_category('Revenue')">Revenue</button>
-            </div>
-            -->
-              <div class="btn-group mr-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawGDPChart('cameroon')"
-                >
-                  Cameroon
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawGDPChart('eygpt')"
-                >
-                  Eygpt
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawGDPChart('kenya')"
-                >
-                  Kenya
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawGDPChart('morocco')"
-                >
-                  Morocco
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawGDPChart('south_africa')"
-                >
-                  South Aftrica
-                </button>
-              </div>
-            </div>
-            <div id="chart-2-div"></div>
-          </div>
-          <div>
-            <h2>Revenue</h2>
-            <div id="chart-3-div"></div>
-          </div>
-          <div>
-            <h3>Predicted vs Actual</h3>
-            <div
-              class="btn-toolbar"
-              role="toolbar"
-              aria-label="Toolbar with button groups"
-            >
-              <!--
-              <div class="btn-group mr-2" role="group">
-                <button type="button" class="btn btn-primary" onclick="set_chart2_category('GDP')">GDP</button>
-                <button type="button" class="btn btn-primary" onclick="set_chart2_category('Revenue')">Revenue</button>
-              </div>
-              -->
-              <div class="btn-group mr-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawRevenueChart('cameroon')"
-                >
-                  Cameroon
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawRevenueChart('eygpt')"
-                >
-                  Eygpt
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawRevenueChart('kenya')"
-                >
-                  Kenya
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawRevenueChart('morocco')"
-                >
-                  Morocco
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="drawRevenueChart('south_africa')"
-                >
-                  South Aftrica
-                </button>
-              </div>
-            </div>
-            <div id="chart-4-div"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="row border rounded">
         <div class="col-md-8 blog-main">
